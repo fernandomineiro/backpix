@@ -1,0 +1,41 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependências do Node.js
+node_modules/
+
+# Ambiente do Docker
+docker-compose.override.yml
+.env
+
+# Diretórios de saída
+/dist/
+.build/
+.temp/
+
+# Arquivos do banco de dados SQLite (caso você use localmente para testes)
+*.sqlite
+*.sqlite3
+
+# Cache do Sequelize
+sequelize-cli.log
+
+# Arquivos de IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Test coverage
+coverage/
+
+# Configurações locais
+*.local.js
