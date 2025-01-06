@@ -7,7 +7,6 @@ exports.createPix = async (req, res) => {
     const client = await Client.findByPk(clientId);
     if (!client) return res.status(404).json({ message: 'Cliente não encontrado.' });
 
-    // Criando a transação de PIX e associando ao clientId
     const pix = await Pix.create({ value, description, clientId });
 
     res.status(201).json(pix);
@@ -19,8 +18,9 @@ exports.createPix = async (req, res) => {
 exports.getClientPix = async (req, res) => {
   try {
     const { clientId } = req.params;
-
+    
     const client = await Client.findByPk(clientId);
+    console.log(client)
     if (!client) return res.status(404).json({ message: 'Cliente não encontrado.' });
 
     const pixList = await Pix.findAll({ where: { clientId } });

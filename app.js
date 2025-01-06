@@ -3,9 +3,12 @@ const sequelize = require('./config/db');
 const clientRoutes = require('./routes/clientRoutes');
 const pixRoutes = require('./routes/pixRoutes');
 const authRoutes = require('./routes/authRoutes');
+const cors = require('cors');
 
 const app = express();
 app.use(express.json());
+
+app.use(cors('*'));
 
 app.use('/clients', clientRoutes);
 app.use('/pix', pixRoutes);
